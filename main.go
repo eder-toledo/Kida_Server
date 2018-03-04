@@ -8,7 +8,7 @@ import (
 func main() {
 	fileServer := http.FileServer(http.Dir("public"))
 	http.Handle("/public/", http.StripPrefix("/public/", fileServer))
-}
+
 port := os.Getenv("PORT")
 
 if port == "" {
@@ -16,4 +16,4 @@ if port == "" {
 }
 
 http.ListenAndServe(":"+port,nil)
-
+}
