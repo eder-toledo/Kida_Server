@@ -4,7 +4,9 @@ import (
 	"os"
 	"net/http"
 )
-
+func handler(w http.ResponseWriter, r *http.Request){
+	http.ServerFile(w,r,"index.html")
+}
 func main() {
 	fileServer := http.FileServer(http.Dir("public"))
 	http.Handle("/public/", http.StripPrefix("/public/", fileServer))
