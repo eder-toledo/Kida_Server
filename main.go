@@ -4,7 +4,7 @@ import (
 	"os"
 	"net/http"
 )
-func handler(w http.ResponseWriter, r *http.Request){
+func home(w http.ResponseWriter, r *http.Request){
 	http.ServerFile(w,r,"index.html")
 }
 func main() {
@@ -16,6 +16,6 @@ port := os.Getenv("PORT")
 if port == "" {
 	port = "8000"
 }
-
+http.HandleFunc("/",home)
 http.ListenAndServe(":"+port,nil)
 }
