@@ -20,11 +20,11 @@ func main() {
 	fs := http.FileServer(http.Dir("public"))
 	mux.Handle("/", fs)
 	mux.HandleFunc("/api", api)
-	/*port := os.Getenv("PORT")
+	port := os.Getenv("PORT")
 
 	if port == "" {
 		port = "8000"
-	}*/
+	}
 	server := &http.Server{
 		Addr:           ":8080",
 		Handler:        mux,
