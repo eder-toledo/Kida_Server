@@ -1,0 +1,9 @@
+{
+"ImportPath": "KIDA_SERVER",
+"GoVersion": "go1.10",
+"GodepVersion": "v74",
+"Packages":[
+  "./..."
+],
+"Deps":[]
+}
